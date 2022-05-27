@@ -1,21 +1,16 @@
+// File generated from our OpenAPI spec
 namespace Stripe
 {
-    using System;
-
     public static class Events
     {
-        /// <summary>
-        /// Occurs whenever an account status or property has changed.
-        /// </summary>
-        public const string AccountUpdated = "account.updated";
-
         /// <summary>
         /// Occurs whenever a user authorizes an application. Sent to the related application only.
         /// </summary>
         public const string AccountApplicationAuthorized = "account.application.authorized";
 
         /// <summary>
-        /// Occurs whenever a user deauthorizes an application. Sent to the related application only.
+        /// Occurs whenever a user deauthorizes an application. Sent to the related application
+        /// only.
         /// </summary>
         public const string AccountApplicationDeauthorized = "account.application.deauthorized";
 
@@ -35,14 +30,14 @@ namespace Stripe
         public const string AccountExternalAccountUpdated = "account.external_account.updated";
 
         /// <summary>
+        /// Occurs whenever an account status or property has changed.
+        /// </summary>
+        public const string AccountUpdated = "account.updated";
+
+        /// <summary>
         /// Occurs whenever an application fee is created on a charge.
         /// </summary>
         public const string ApplicationFeeCreated = "application_fee.created";
-
-        /// <summary>
-        /// Occurs whenever an application fee is refunded, whether from refunding a charge or from refunding the application fee directly, including partial refunds.
-        /// </summary>
-        public const string ApplicationFeeRefunded = "application_fee.refunded";
 
         /// <summary>
         /// Occurs whenever an application fee refund is updated.
@@ -50,7 +45,16 @@ namespace Stripe
         public const string ApplicationFeeRefundUpdated = "application_fee.refund.updated";
 
         /// <summary>
-        /// Occurs whenever your Stripe balance has been updated (e.g. when a charge collected is available to be paid out). By default, Stripe will automatically transfer any funds in your balance to your bank account on a daily basis.
+        /// Occurs whenever an application fee is refunded, whether from refunding a charge or from
+        /// &lt;a href="#fee_refunds"&gt;refunding the application fee directly&lt;/a&gt;. This
+        /// includes partial refunds.
+        /// </summary>
+        public const string ApplicationFeeRefunded = "application_fee.refunded";
+
+        /// <summary>
+        /// Occurs whenever your Stripe balance has been updated (e.g., when a charge is available
+        /// to be paid out). By default, Stripe automatically transfers funds in your balance to
+        /// your bank account on a daily basis.
         /// </summary>
         public const string BalanceAvailable = "balance.available";
 
@@ -65,12 +69,19 @@ namespace Stripe
         public const string BillingPortalConfigurationUpdated = "billing_portal.configuration.updated";
 
         /// <summary>
+        /// Occurs whenever a portal session is created.
+        /// </summary>
+        public const string BillingPortalSessionCreated = "billing_portal.session.created";
+
+        /// <summary>
         /// Occurs whenever a capability has new requirements or a new status.
         /// </summary>
         public const string CapabilityUpdated = "capability.updated";
 
         /// <summary>
-        /// Occurs whenever there is a positive remaining cash balance after Stripe automatically reconciles new funds into the cash balance. If you enabled manual reconciliation, this webhook will fire whenever there are new funds into the cash balance.
+        /// Occurs whenever there is a positive remaining cash balance after Stripe automatically
+        /// reconciles new funds into the cash balance. If you enabled manual reconciliation, this
+        /// webhook will fire whenever there are new funds into the cash balance.
         /// </summary>
         public const string CashBalanceFundsAvailable = "cash_balance.funds_available";
 
@@ -80,38 +91,9 @@ namespace Stripe
         public const string ChargeCaptured = "charge.captured";
 
         /// <summary>
-        /// Occurs whenever a previously uncaptured charge expires.
-        /// </summary>
-        public const string ChargeExpired = "charge.expired";
-
-        /// <summary>
-        /// Occurs whenever a failed charge attempt occurs.
-        /// </summary>
-        public const string ChargeFailed = "charge.failed";
-
-        /// <summary>
-        /// Occurs whenever a pending charge is created.
-        /// </summary>
-        public const string ChargePending = "charge.pending";
-
-        /// <summary>
-        /// Occurs whenever a charge is refunded, including partial refunds.
-        /// </summary>
-        public const string ChargeRefunded = "charge.refunded";
-
-        /// <summary>
-        /// Occurs whenever a new charge is created and is successful.
-        /// </summary>
-        public const string ChargeSucceeded = "charge.succeeded";
-
-        /// <summary>
-        /// Occurs whenever a charge description or metadata is updated.
-        /// </summary>
-        public const string ChargeUpdated = "charge.updated";
-
-        /// <summary>
-        /// Occurs when the dispute is closed and the dispute status changes to
-        /// <c>charge_refunded</c>, <c>lost</c>, <c>warning_closed</c>, or <c>won</c>.
+        /// Occurs when a dispute is closed and the dispute status changes to
+        /// &lt;code&gt;lost&lt;/code&gt;, &lt;code&gt;warning_closed&lt;/code&gt;, or
+        /// &lt;code&gt;won&lt;/code&gt;.
         /// </summary>
         public const string ChargeDisputeClosed = "charge.dispute.closed";
 
@@ -122,8 +104,9 @@ namespace Stripe
 
         /// <summary>
         /// Occurs when funds are reinstated to your account after a dispute is closed. This
-        /// includes <a href="https://stripe.com/docs/disputes#disputes-on-partially-refunded-payments">partially
-        /// refunded payments</a>.
+        /// includes &lt;a
+        /// href="/docs/disputes#disputes-on-partially-refunded-payments"&gt;partially refunded
+        /// payments&lt;/a&gt;.
         /// </summary>
         public const string ChargeDisputeFundsReinstated = "charge.dispute.funds_reinstated";
 
@@ -138,17 +121,47 @@ namespace Stripe
         public const string ChargeDisputeUpdated = "charge.dispute.updated";
 
         /// <summary>
-        /// Occurs whenever a refund is updated on selected payment methods.
+        /// Occurs whenever an uncaptured charge expires.
+        /// </summary>
+        public const string ChargeExpired = "charge.expired";
+
+        /// <summary>
+        /// Occurs whenever a failed charge attempt occurs.
+        /// </summary>
+        public const string ChargeFailed = "charge.failed";
+
+        /// <summary>
+        /// Occurs whenever a pending charge is created.
+        /// </summary>
+        public const string ChargePending = "charge.pending";
+
+        /// <summary>
+        /// Occurs whenever a refund is updated, on selected payment methods.
         /// </summary>
         public const string ChargeRefundUpdated = "charge.refund.updated";
 
         /// <summary>
-        /// Occurs when a Checkout Session asynchronous payment has failed.
+        /// Occurs whenever a charge is refunded, including partial refunds.
+        /// </summary>
+        public const string ChargeRefunded = "charge.refunded";
+
+        /// <summary>
+        /// Occurs whenever a charge is successful.
+        /// </summary>
+        public const string ChargeSucceeded = "charge.succeeded";
+
+        /// <summary>
+        /// Occurs whenever a charge description or metadata is updated.
+        /// </summary>
+        public const string ChargeUpdated = "charge.updated";
+
+        /// <summary>
+        /// Occurs when a payment intent using a delayed payment method fails.
         /// </summary>
         public const string CheckoutSessionAsyncPaymentFailed = "checkout.session.async_payment_failed";
 
         /// <summary>
-        /// Occurs when a Checkout Session asynchronous payment has succeeded.
+        /// Occurs when a payment intent using a delayed payment method finally succeeds.
         /// </summary>
         public const string CheckoutSessionAsyncPaymentSucceeded = "checkout.session.async_payment_succeeded";
 
@@ -203,17 +216,12 @@ namespace Stripe
         public const string CustomerDeleted = "customer.deleted";
 
         /// <summary>
-        /// Occurs whenever any property of a customer changes.
-        /// </summary>
-        public const string CustomerUpdated = "customer.updated";
-
-        /// <summary>
         /// Occurs whenever a coupon is attached to a customer.
         /// </summary>
         public const string CustomerDiscountCreated = "customer.discount.created";
 
         /// <summary>
-        /// Occurs whenever a customer's discount is removed.
+        /// Occurs whenever a coupon is removed from a customer.
         /// </summary>
         public const string CustomerDiscountDeleted = "customer.discount.deleted";
 
@@ -223,7 +231,7 @@ namespace Stripe
         public const string CustomerDiscountUpdated = "customer.discount.updated";
 
         /// <summary>
-        /// Occurs whenever a new source is created for the customer.
+        /// Occurs whenever a new source is created for a customer.
         /// </summary>
         public const string CustomerSourceCreated = "customer.source.created";
 
@@ -233,7 +241,7 @@ namespace Stripe
         public const string CustomerSourceDeleted = "customer.source.deleted";
 
         /// <summary>
-        /// Occurs whenever a source will expire at the end of the month.
+        /// Occurs whenever a card or source will expire at the end of the month.
         /// </summary>
         public const string CustomerSourceExpiring = "customer.source.expiring";
 
@@ -243,35 +251,36 @@ namespace Stripe
         public const string CustomerSourceUpdated = "customer.source.updated";
 
         /// <summary>
-        /// Occurs whenever a customer with no subscription is signed up for a plan.
+        /// Occurs whenever a customer is signed up for a new plan.
         /// </summary>
         public const string CustomerSubscriptionCreated = "customer.subscription.created";
 
         /// <summary>
-        /// Occurs whenever a customer ends their subscription.
+        /// Occurs whenever a customer's subscription ends.
         /// </summary>
         public const string CustomerSubscriptionDeleted = "customer.subscription.deleted";
 
         /// <summary>
-        /// Occurs whenever a customer's subscription's pending update is
-        /// applied, and the subscription is updated.
+        /// Occurs whenever a customer's subscription's pending update is applied, and the
+        /// subscription is updated.
         /// </summary>
         public const string CustomerSubscriptionPendingUpdateApplied = "customer.subscription.pending_update_applied";
 
         /// <summary>
-        /// Occurs whenever a customer's subscription's pending update expires
-        /// before the related invoice is paid.
+        /// Occurs whenever a customer's subscription's pending update expires before the related
+        /// invoice is paid.
         /// </summary>
         public const string CustomerSubscriptionPendingUpdateExpired = "customer.subscription.pending_update_expired";
 
         /// <summary>
-        /// Occurs three days before the trial period of a subscription is scheduled to end.
+        /// Occurs three days before a subscription's trial period is scheduled to end, or when a
+        /// trial is ended immediately (using &lt;code&gt;trial_end=now&lt;/code&gt;).
         /// </summary>
         public const string CustomerSubscriptionTrialWillEnd = "customer.subscription.trial_will_end";
 
         /// <summary>
-        /// Occurs whenever a subscription changes (e.g., switching from one plan to another,
-        /// or changing the status from trial to active).
+        /// Occurs whenever a subscription changes (e.g., switching from one plan to another, or
+        /// changing the status from trial to active).
         /// </summary>
         public const string CustomerSubscriptionUpdated = "customer.subscription.updated";
 
@@ -289,6 +298,11 @@ namespace Stripe
         /// Occurs whenever a customer's tax ID is updated.
         /// </summary>
         public const string CustomerTaxIdUpdated = "customer.tax_id.updated";
+
+        /// <summary>
+        /// Occurs whenever any property of a customer changes.
+        /// </summary>
+        public const string CustomerUpdated = "customer.updated";
 
         /// <summary>
         /// Occurs whenever a new Stripe-generated file is available for your account.
@@ -321,15 +335,14 @@ namespace Stripe
         public const string IdentityVerificationSessionRequiresInput = "identity.verification_session.requires_input";
 
         /// <summary>
-        /// Occurs whenever a VerificationSession is verified.
+        /// Occurs whenever a VerificationSession transitions to verified.
         /// </summary>
         public const string IdentityVerificationSessionVerified = "identity.verification_session.verified";
 
         /// <summary>
         /// Occurs whenever a new invoice is created. To learn how webhooks can be used with this
-        /// event, and how they can affect it, see
-        /// <a href="https://stripe.com/docs/subscriptions/webhooks">Using Webhooks with
-        /// Subscriptions</a>.
+        /// event, and how they can affect it, see &lt;a
+        /// href="/docs/subscriptions/webhooks"&gt;Using Webhooks with Subscriptions&lt;/a&gt;.
         /// </summary>
         public const string InvoiceCreated = "invoice.created";
 
@@ -339,17 +352,14 @@ namespace Stripe
         public const string InvoiceDeleted = "invoice.deleted";
 
         /// <summary>
-        /// Deprecated, use InvoiceFinalizationFailed.
-        /// </summary>
-        public const string InvoiceFinalizationError = "invoice.finalization_error";
-
-        /// <summary>
-        /// Occurs whenever a draft invoice cannot be finalized.
+        /// Occurs whenever a draft invoice cannot be finalized. See the invoice’s &lt;a
+        /// href="/docs/api/invoices/object#invoice_object-last_finalization_error"&gt;last
+        /// finalization error&lt;/a&gt; for details.
         /// </summary>
         public const string InvoiceFinalizationFailed = "invoice.finalization_failed";
 
         /// <summary>
-        ///  Occurs whenever a draft invoice is finalized and updated to be an open invoice.
+        /// Occurs whenever a draft invoice is finalized and updated to be an open invoice.
         /// </summary>
         public const string InvoiceFinalized = "invoice.finalized";
 
@@ -370,12 +380,14 @@ namespace Stripe
         public const string InvoicePaymentActionRequired = "invoice.payment_action_required";
 
         /// <summary>
-        /// Occurs whenever an invoice payment attempt fails, due either to a declined payment or
-        /// to the lack of a stored payment method.
+        /// Occurs whenever an invoice payment attempt fails, due either to a declined payment or to
+        /// the lack of a stored payment method.
         /// </summary>
         public const string InvoicePaymentFailed = "invoice.payment_failed";
 
-        [Obsolete("Use InvoicePaid instead.")]
+        /// <summary>
+        /// Occurs whenever an invoice payment attempt succeeds.
+        /// </summary>
         public const string InvoicePaymentSucceeded = "invoice.payment_succeeded";
 
         /// <summary>
@@ -385,10 +397,10 @@ namespace Stripe
 
         /// <summary>
         /// Occurs X number of days before a subscription is scheduled to create an invoice that is
-        /// automatically charged—where X is determined by your
-        /// <a href="https://dashboard.stripe.com/account/billing/automatic">subscriptions
-        /// settings</a>. Note: The received <see cref="Invoice"/> object will not have an invoice
-        /// ID.
+        /// automatically charged—where X is determined by your &lt;a
+        /// href="https://dashboard.stripe.com/account/billing/automatic"&gt;subscriptions
+        /// settings&lt;/a&gt;. Note: The received &lt;code&gt;Invoice&lt;/code&gt; object will not
+        /// have an invoice ID.
         /// </summary>
         public const string InvoiceUpcoming = "invoice.upcoming";
 
@@ -405,65 +417,67 @@ namespace Stripe
         /// <summary>
         /// Occurs whenever an invoice item is created.
         /// </summary>
-        public const string InvoiceItemCreated = "invoiceitem.created";
+        public const string InvoiceitemCreated = "invoiceitem.created";
 
         /// <summary>
         /// Occurs whenever an invoice item is deleted.
         /// </summary>
-        public const string InvoiceItemDeleted = "invoiceitem.deleted";
+        public const string InvoiceitemDeleted = "invoiceitem.deleted";
 
         /// <summary>
         /// Occurs whenever an invoice item is updated.
         /// </summary>
-        public const string InvoiceItemUpdated = "invoiceitem.updated";
+        public const string InvoiceitemUpdated = "invoiceitem.updated";
 
         /// <summary>
-        /// Occurs whenever an issuing authorization is created.
+        /// Occurs whenever an authorization is created.
         /// </summary>
         public const string IssuingAuthorizationCreated = "issuing_authorization.created";
 
         /// <summary>
-        /// Occurs whenever an issuing authorization request is sent.
+        /// Represents a synchronous request for authorization, see &lt;a
+        /// href="/docs/issuing/purchases/authorizations#authorization-handling"&gt;Using your
+        /// integration to handle authorization requests&lt;/a&gt;.
         /// </summary>
         public const string IssuingAuthorizationRequest = "issuing_authorization.request";
 
         /// <summary>
-        /// Occurs whenever an issuing authorization is updated.
+        /// Occurs whenever an authorization is updated.
         /// </summary>
         public const string IssuingAuthorizationUpdated = "issuing_authorization.updated";
 
         /// <summary>
-        /// Occurs whenever an issuing card is created.
+        /// Occurs whenever a card is created.
         /// </summary>
         public const string IssuingCardCreated = "issuing_card.created";
 
         /// <summary>
-        /// Occurs whenever an issuing card is updated.
+        /// Occurs whenever a card is updated.
         /// </summary>
         public const string IssuingCardUpdated = "issuing_card.updated";
 
         /// <summary>
-        /// Occurs whenever an issuing cardholder is created.
+        /// Occurs whenever a cardholder is created.
         /// </summary>
         public const string IssuingCardholderCreated = "issuing_cardholder.created";
 
         /// <summary>
-        /// Occurs whenever an issuing cardholder is updated.
+        /// Occurs whenever a cardholder is updated.
         /// </summary>
         public const string IssuingCardholderUpdated = "issuing_cardholder.updated";
 
         /// <summary>
-        /// Occurs whenever a dispute is closed.
+        /// Occurs whenever a dispute is won, lost or expired.
         /// </summary>
         public const string IssuingDisputeClosed = "issuing_dispute.closed";
 
         /// <summary>
-        /// Occurs whenever an issuing dispute is created.
+        /// Occurs whenever a dispute is created.
         /// </summary>
         public const string IssuingDisputeCreated = "issuing_dispute.created";
 
         /// <summary>
-        /// Occurs whenever an issuing dispute's funds are reinstate.
+        /// Occurs whenever funds are reinstated to your account for an Issuing dispute.
         /// </summary>
         public const string IssuingDisputeFundsReinstated = "issuing_dispute.funds_reinstated";
 
@@ -473,7 +487,7 @@ namespace Stripe
         public const string IssuingDisputeSubmitted = "issuing_dispute.submitted";
 
         /// <summary>
-        /// Occurs whenever an issuing dispute is updated.
+        /// Occurs whenever a dispute is updated.
         /// </summary>
         public const string IssuingDisputeUpdated = "issuing_dispute.updated";
 
@@ -488,9 +502,14 @@ namespace Stripe
         public const string IssuingTransactionUpdated = "issuing_transaction.updated";
 
         /// <summary>
-        /// Occurs whenever a mandate is updated.
+        /// Occurs whenever a Mandate is updated.
         /// </summary>
         public const string MandateUpdated = "mandate.updated";
+
+        /// <summary>
+        /// Occurs whenever an order return is created.
+        /// </summary>
+        public const string OrderReturnCreated = "order_return.created";
 
         /// <summary>
         /// Occurs whenever an order is created.
@@ -498,12 +517,12 @@ namespace Stripe
         public const string OrderCreated = "order.created";
 
         /// <summary>
-        /// Occurs whenever payment is attempted on an order, and the payment fails.
+        /// Occurs whenever an order payment attempt fails.
         /// </summary>
         public const string OrderPaymentFailed = "order.payment_failed";
 
         /// <summary>
-        /// Occurs whenever payment is attempted on an order, and the payment succeeds.
+        /// Occurs whenever an order payment attempt succeeds.
         /// </summary>
         public const string OrderPaymentSucceeded = "order.payment_succeeded";
 
@@ -513,32 +532,12 @@ namespace Stripe
         public const string OrderUpdated = "order.updated";
 
         /// <summary>
-        /// Occurs whenever an order return is created.
-        /// </summary>
-        public const string OrderReturnCreated = "order_return.created";
-
-        /// <summary>
-        /// Occurs whenever a payment is created.
-        /// </summary>
-        public const string PaymentCreated = "payment.created";
-
-        /// <summary>
-        /// Occurs when a payment link is created.
-        /// </summary>
-        public const string PaymentLinkCreated = "payment_link.created";
-
-        /// <summary>
-        /// Occurs when a payment link is updated.
-        /// </summary>
-        public const string PaymentLinkUpdated = "payment_link.updated";
-
-        /// <summary>
-        /// Occurs when a <see cref="PaymentIntent"/> has funds to be captured. Check the
-        /// <see cref="PaymentIntent.AmountCapturable"/> property on the PaymentIntent to determine
+        /// Occurs when a PaymentIntent has funds to be captured. Check the
+        /// &lt;code&gt;amount_capturable&lt;/code&gt; property on the PaymentIntent to determine
         /// the amount that can be captured. You may capture the PaymentIntent with an
-        /// <see cref="PaymentIntentCaptureOptions.AmountToCapture"/> value up to the specified
-        /// amount. <a href="https://stripe.com/docs/api/payment_intents/capture">Learn more about
-        /// capturing PaymentIntents.</a>
+        /// &lt;code&gt;amount_to_capture&lt;/code&gt; value up to the specified amount. &lt;a
+        /// href="https://stripe.com/docs/api/payment_intents/capture"&gt;Learn more about capturing
+        /// PaymentIntents.&lt;/a&gt;.
         /// </summary>
         public const string PaymentIntentAmountCapturableUpdated = "payment_intent.amount_capturable_updated";
 
@@ -553,12 +552,14 @@ namespace Stripe
         public const string PaymentIntentCreated = "payment_intent.created";
 
         /// <summary>
-        /// Occurs when funds are applied to a customer_balance PaymentIntent and the 'amount_remaining' changes.
+        /// Occurs when funds are applied to a customer_balance PaymentIntent and the
+        /// 'amount_remaining' changes.
         /// </summary>
         public const string PaymentIntentPartiallyFunded = "payment_intent.partially_funded";
 
         /// <summary>
-        /// Occurs when a PaymentIntent has failed the attempt to create a source or a payment.
+        /// Occurs when a PaymentIntent has failed the attempt to create a payment method or a
+        /// payment.
         /// </summary>
         public const string PaymentIntentPaymentFailed = "payment_intent.payment_failed";
 
@@ -573,9 +574,19 @@ namespace Stripe
         public const string PaymentIntentRequiresAction = "payment_intent.requires_action";
 
         /// <summary>
-        /// Occurs when a PaymentIntent has been successfully fulfilled.
+        /// Occurs when a PaymentIntent has successfully completed payment.
         /// </summary>
         public const string PaymentIntentSucceeded = "payment_intent.succeeded";
+
+        /// <summary>
+        /// Occurs when a payment link is created.
+        /// </summary>
+        public const string PaymentLinkCreated = "payment_link.created";
+
+        /// <summary>
+        /// Occurs when a payment link is updated.
+        /// </summary>
+        public const string PaymentLinkUpdated = "payment_link.updated";
 
         /// <summary>
         /// Occurs whenever a new payment method is attached to a customer.
@@ -587,16 +598,15 @@ namespace Stripe
         /// </summary>
         public const string PaymentMethodAutomaticallyUpdated = "payment_method.automatically_updated";
 
-        [Obsolete("Use PaymentMethodAutomaticallyUpdated instead.")]
-        public const string PaymentMethodCardAutomaticallyUpdated = "payment_method.card_automatically_updated";
-
         /// <summary>
         /// Occurs whenever a payment method is detached from a customer.
         /// </summary>
         public const string PaymentMethodDetached = "payment_method.detached";
 
         /// <summary>
-        /// Occurs whenever a payment method is updated via the API.
+        /// Occurs whenever a payment method is updated via the &lt;a
+        /// href="https://stripe.com/docs/api/payment_methods/update"&gt;PaymentMethod update
+        /// API&lt;/a&gt;.
         /// </summary>
         public const string PaymentMethodUpdated = "payment_method.updated";
 
@@ -606,39 +616,39 @@ namespace Stripe
         public const string PayoutCanceled = "payout.canceled";
 
         /// <summary>
-        /// Occurs whenever a new payout is created.
+        /// Occurs whenever a payout is created.
         /// </summary>
         public const string PayoutCreated = "payout.created";
 
         /// <summary>
-        /// Occurs whenever Stripe attempts to send a payout and that transfer fails.
+        /// Occurs whenever a payout attempt fails.
         /// </summary>
         public const string PayoutFailed = "payout.failed";
 
         /// <summary>
-        /// Occurs whenever a payout is *expected* to be available in the destination account.
-        /// If the payout fails, a <see cref="PayoutFailed"/> notification is also sent, at a later
-        /// time.
+        /// Occurs whenever a payout is &lt;em&gt;expected&lt;/em&gt; to be available in the
+        /// destination account. If the payout fails, a &lt;code&gt;payout.failed&lt;/code&gt;
+        /// notification is also sent, at a later time.
         /// </summary>
         public const string PayoutPaid = "payout.paid";
 
         /// <summary>
-        /// Occurs whenever a payout's metadata is updated.
+        /// Occurs whenever a payout is updated.
         /// </summary>
         public const string PayoutUpdated = "payout.updated";
 
         /// <summary>
-        /// Occurs whenever a person is created.
+        /// Occurs whenever a person associated with an account is created.
         /// </summary>
         public const string PersonCreated = "person.created";
 
         /// <summary>
-        /// Occurs whenever a person is deleted.
+        /// Occurs whenever a person associated with an account is deleted.
         /// </summary>
         public const string PersonDeleted = "person.deleted";
 
         /// <summary>
-        /// Occurs whenever a person is updated.
+        /// Occurs whenever a person associated with an account is updated.
         /// </summary>
         public const string PersonUpdated = "person.updated";
 
@@ -743,24 +753,25 @@ namespace Stripe
         public const string RecipientUpdated = "recipient.updated";
 
         /// <summary>
-        /// Occurs whenever a requested <see cref="Reporting.ReportRun"/> failed to complete.
+        /// Occurs whenever a requested &lt;code&gt;ReportRun&lt;/code&gt; failed to complete.
         /// </summary>
         public const string ReportingReportRunFailed = "reporting.report_run.failed";
 
         /// <summary>
-        /// Occurs whenever a requested <see cref="Reporting.ReportRun"/> completed succesfully.
+        /// Occurs whenever a requested &lt;code&gt;ReportRun&lt;/code&gt; completed succesfully.
         /// </summary>
         public const string ReportingReportRunSucceeded = "reporting.report_run.succeeded";
 
         /// <summary>
-        /// Occurs whenever a requested <see cref="Reporting.ReportType"/> is updated (typically to
-        /// indicate that a new day's data has come available).
+        /// Occurs whenever a &lt;code&gt;ReportType&lt;/code&gt; is updated (typically to indicate
+        /// that a new day's data has come available).
         /// </summary>
         public const string ReportingReportTypeUpdated = "reporting.report_type.updated";
 
         /// <summary>
-        /// Occurs whenever a review is closed. The review's reason field indicates why:
-        /// <c>approved</c>, <c>disputed</c>, <c>refunded</c>, or <c>refunded_as_fraud</c>.
+        /// Occurs whenever a review is closed. The review's &lt;code&gt;reason&lt;/code&gt; field
+        /// indicates why: &lt;code&gt;approved&lt;/code&gt;, &lt;code&gt;disputed&lt;/code&gt;,
+        /// &lt;code&gt;refunded&lt;/code&gt;, or &lt;code&gt;refunded_as_fraud&lt;/code&gt;.
         /// </summary>
         public const string ReviewClosed = "review.closed";
 
@@ -780,7 +791,7 @@ namespace Stripe
         public const string SetupIntentCreated = "setup_intent.created";
 
         /// <summary>
-        /// Occurs when a SetupIntent is in <c>requires_action</c> state.
+        /// Occurs when a SetupIntent is in requires_action state.
         /// </summary>
         public const string SetupIntentRequiresAction = "setup_intent.requires_action";
 
@@ -790,14 +801,14 @@ namespace Stripe
         public const string SetupIntentSetupFailed = "setup_intent.setup_failed";
 
         /// <summary>
-        /// Occurs when a SetupIntent has successfully setup a payment method.
+        /// Occurs when an SetupIntent has successfully setup a payment method.
         /// </summary>
         public const string SetupIntentSucceeded = "setup_intent.succeeded";
 
         /// <summary>
         /// Occurs whenever a Sigma scheduled query run finishes.
         /// </summary>
-        public const string SigmaScheduleQueryRunCreated = "sigma.scheduled_query_run.created";
+        public const string SigmaScheduledQueryRunCreated = "sigma.scheduled_query_run.created";
 
         /// <summary>
         /// Occurs whenever a SKU is created.
@@ -825,7 +836,7 @@ namespace Stripe
         public const string SourceChargeable = "source.chargeable";
 
         /// <summary>
-        /// Occurs whenever a source is failed.
+        /// Occurs whenever a source fails.
         /// </summary>
         public const string SourceFailed = "source.failed";
 
@@ -887,12 +898,12 @@ namespace Stripe
         public const string SubscriptionScheduleUpdated = "subscription_schedule.updated";
 
         /// <summary>
-        /// Occurs whenever a tax rate is created.
+        /// Occurs whenever a new tax rate is created.
         /// </summary>
         public const string TaxRateCreated = "tax_rate.created";
 
         /// <summary>
-        /// Occurs whenever a tax rate changes.
+        /// Occurs whenever a tax rate is updated.
         /// </summary>
         public const string TaxRateUpdated = "tax_rate.updated";
 
@@ -957,9 +968,20 @@ namespace Stripe
         public const string TopupSucceeded = "topup.succeeded";
 
         /// <summary>
-        /// Occurs whenever a new transfer is created.
+        /// Occurs whenever a transfer is created.
         /// </summary>
         public const string TransferCreated = "transfer.created";
+
+        /// <summary>
+        /// Occurs whenever a transfer failed.
+        /// </summary>
+        public const string TransferFailed = "transfer.failed";
+
+        /// <summary>
+        /// Occurs after a transfer is paid. For Instant Payouts, the event will typically be sent
+        /// within 30 minutes.
+        /// </summary>
+        public const string TransferPaid = "transfer.paid";
 
         /// <summary>
         /// Occurs whenever a transfer is reversed, including partial reversals.
@@ -967,44 +989,9 @@ namespace Stripe
         public const string TransferReversed = "transfer.reversed";
 
         /// <summary>
-        /// Occurs whenever the description or metadata of a transfer is updated.
+        /// Occurs whenever a transfer's description or metadata is updated.
         /// </summary>
         public const string TransferUpdated = "transfer.updated";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit is canceled.
-        /// </summary>
-        public const string TreasuryCheckDepositCanceled = "treasury.check_deposit.canceled";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit is created.
-        /// </summary>
-        public const string TreasuryCheckDepositCreated = "treasury.check_deposit.created";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit is processing.
-        /// </summary>
-        public const string TreasuryCheckDepositProcessing = "treasury.check_deposit.processing";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit is received.
-        /// </summary>
-        public const string TreasuryCheckDepositReceived = "treasury.check_deposit.received";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit requires action.
-        /// </summary>
-        public const string TreasuryCheckDepositRequiresAction = "treasury.check_deposit.requires_action";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit requires confirmation.
-        /// </summary>
-        public const string TreasuryCheckDepositRequiresConfirmation = "treasury.check_deposit.requires_confirmation";
-
-        /// <summary>
-        /// Occurs whenever a CheckDeposit is reversed.
-        /// </summary>
-        public const string TreasuryCheckDepositReversed = "treasury.check_deposit.reversed";
 
         /// <summary>
         /// Occurs whenever an CreditReversal is submitted and created.
@@ -1042,7 +1029,8 @@ namespace Stripe
         public const string TreasuryFinancialAccountCreated = "treasury.financial_account.created";
 
         /// <summary>
-        /// Occurs whenever the statuses of any features within an existing FinancialAccount are updated.
+        /// Occurs whenever the statuses of any features within an existing FinancialAccount are
+        /// updated.
         /// </summary>
         public const string TreasuryFinancialAccountFeaturesStatusUpdated = "treasury.financial_account.features_status_updated";
 
@@ -1127,33 +1115,33 @@ namespace Stripe
         public const string TreasuryOutboundTransferReturned = "treasury.outbound_transfer.returned";
 
         /// <summary>
-        /// Occurs whenever a received_credit is created as a result of funds being pushed by another account.
+        /// Occurs whenever a received_credit is created as a result of funds being pushed by
+        /// another account.
         /// </summary>
         public const string TreasuryReceivedCreditCreated = "treasury.received_credit.created";
 
         /// <summary>
-        /// Occurs whenever a received_credit transitions to failed state. Only applicable for check deposits.
+        /// Occurs whenever a received_credit transitions to failed state. Only applicable for check
+        /// deposits.
         /// </summary>
         public const string TreasuryReceivedCreditFailed = "treasury.received_credit.failed";
 
         /// <summary>
-        /// Occurs whenever a received_credit is reversed, and a received_debit is created. Only applicable for check deposits.
+        /// Occurs whenever a received_credit is reversed, and a received_debit is created. Only
+        /// applicable for check deposits.
         /// </summary>
         public const string TreasuryReceivedCreditReversed = "treasury.received_credit.reversed";
 
         /// <summary>
-        /// Occurs whenever a received_credit transitions to succeeded state. Only applicable for check deposits.
+        /// Occurs whenever a received_credit transitions to succeeded state. Only applicable for
+        /// check deposits.
         /// </summary>
         public const string TreasuryReceivedCreditSucceeded = "treasury.received_credit.succeeded";
 
         /// <summary>
-        /// Occurs whenever a received_debit is created as a result of funds being pulled by another account.
+        /// Occurs whenever a received_debit is created as a result of funds being pulled by another
+        /// account.
         /// </summary>
         public const string TreasuryReceivedDebitCreated = "treasury.received_debit.created";
-
-        /// <summary>
-        /// May be sent by Stripe at any time to see if a provided webhook URL is working.
-        /// </summary>
-        public const string Ping = "ping";
     }
 }
